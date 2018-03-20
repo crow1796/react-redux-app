@@ -2,7 +2,7 @@ const initialState = {
 
 }
 
-let reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch(action.type){
         default:
             return state
