@@ -1,11 +1,12 @@
-import { SAY_HELLO } from '@/actions/types/hello'
-const initialState = {}
+import * as Types from '@/actions/types/hello'
+const initialState = {
+    name: null
+}
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
-        case SAY_HELLO:
-            console.log(`Hello, ${action.payload}`)
-            return state
+        case Types.SET_NAME:
+            return Object.assign(state, { name: action.payload })
         default:
             return state
     }

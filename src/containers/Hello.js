@@ -4,24 +4,27 @@ import { bindActionCreators } from 'redux'
 import * as Actions from '@/actions/hello'
 
 class Hello extends React.Component {
-
     constructor(props){
         super(props)
-        this.props.sayHello('Joshua')
     }
 
     render(){
         return (
             <div id="hello">
+                { this.props.name }
             </div>
         )
     }
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({
-        sayHello: Actions.sayHello
-    }, dispatch)
-}
+const mapStateToProps = (state) => ({
+    name: state.name
+})
 
-export default connect(null, mapDispatchToProps)(Hello)
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({
+        setName: Actions.setName
+    }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hello)

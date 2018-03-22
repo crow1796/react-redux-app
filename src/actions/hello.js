@@ -1,12 +1,12 @@
 import * as Types from '@/actions/types/hello'
 
-const sayHello = (name) => {
+const setName = (name) => {
     return {
-        type: Types.SAY_HELLO,
+        type: Types.SET_NAME,
         payload: name
     }
 }
 
 export {
-    sayHello
+    setName
 }

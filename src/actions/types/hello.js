@@ -1,5 +1,5 @@
-const SAY_HELLO = 'SAY_HELLO'
+const SET_NAME = 'SET_NAME'
 
 export {
-    SAY_HELLO
+    SET_NAME
 }
